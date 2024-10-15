@@ -1,0 +1,29 @@
+{
+  "name": "crypto_miner",
+  "type": "multi_check",
+  "checks": [
+    {
+      "type": "log_content",
+      "patterns": [
+        "xmrig",
+        "ethminer",
+        "cpuminer",
+        "bfgminer",
+        "cgminer",
+        "minerd",
+        "cryptonight",
+        "stratum+tcp",
+        "minexmr",
+        "nanopool",
+        "minergate"
+      ],
+      "message": "Crypto miner detected based on log: {pattern}"
+    },
+    {
+      "type": "process_check",
+      "command": "top -b -n 1",
+      "cpu_threshold": 90,
+      "message": "Crypto miner possible - High CPU usage detected on process: {processes}"
+    }
+  ]
+}

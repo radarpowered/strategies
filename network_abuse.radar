@@ -1,0 +1,11 @@
+{
+  "name": "network_abuse",
+  "type": "stats_check",
+  "checks": [
+    {
+      "type": "network_usage",
+      "threshold": 4294967296,
+      "message": "High network usage detected - {usage} MB"
+    }
+  ]
+}

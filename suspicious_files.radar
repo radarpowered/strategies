@@ -1,0 +1,37 @@
+{
+  "name": "suspicious_files",
+  "type": "file_check",
+  "checks": [
+    {
+      "type": "file_existence",
+      "path": ".npm/npm",
+      "message": "Suspicious .npm/npm file detected at root level. This is a typical location used for Nezha."
+    },
+    {
+      "type": "file_content",
+      "path": "run.sh",
+      "patterns": [
+        "wget",
+        "curl",
+        "\\.\\./cache/cpuminer"
+      ],
+      "message": "Suspicious content detected in run.sh. It is referencing common patterns for crypto mining."
+    },
+    {
+      "type": "file_size",
+      "path": "server.jar",
+      "max_size": 5242880,
+      "message": "Small server.jar file detected. This could very likely be a false flag if the user is running something like Fabric, but it is equally as likely to be a malicious jar file."
+    },
+    {
+      "type": "file_existence",
+      "directory": "cache",
+      "patterns": [
+        "server.jar",
+        "cpuminer",
+        "cpuminer-avx2"
+      ],
+      "message": "Suspicious file detected in cache directory: {filename}. This is *confirmed* to be a crypto miner, this is a very common tactic."
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "name": "nezha",
+  "type": "log_check",
+  "checks": [
+    {
+      "type": "log_content",
+      "patterns": [
+        "nezha",
+        "cloudflared",
+        "App is running!"
+      ],
+      "message": "Nezha detected based on log: {pattern}"
+    }
+  ]
+}

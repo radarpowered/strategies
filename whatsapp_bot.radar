@@ -1,0 +1,19 @@
+{
+  "name": "whatsapp_bot",
+  "type": "package_check",
+  "checks": [
+    {
+      "type": "dependency",
+      "file": "package.json",
+      "patterns": [
+        "whatsapp-web.js",
+        "whatsapp-web-js",
+        "webwhatsapi",
+        "yowsup",
+        "wa-automate",
+        "baileys"
+      ],
+      "message": "WhatsApp bot detected, this dependency was found: {dependency}"
+    }
+  ]
+}
